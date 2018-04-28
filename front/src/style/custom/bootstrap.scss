@@ -1,0 +1,9 @@
+@import "../const/colors";
+
+$theme-colors: (
+  "primary": $primary-color,
+  "secondary": $accent-color,
+  "danger": $warn-color
+) !default;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";

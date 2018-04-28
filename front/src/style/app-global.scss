@@ -1,0 +1,20 @@
+@import 'const/colors';
+@import 'const/typography';
+
+html,
+body {
+  height: 100%;
+  font-family: $font-family-base !important;
+  background-color: #eee;
+}
+
+button,
+a,
+i {
+  cursor: pointer;
+}
+
+.brand {
+  font-size: 1.7rem;
+  font-weight: lighter;
+}

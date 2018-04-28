@@ -1,0 +1,30 @@
+footer {
+  padding: 15px 0;
+  text-align: center;
+}
+
+footer .copyright {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer {
+  z-index: -1;
+  margin-top: 1rem;
+  height: 3.75rem;
+  border-top: 1px solid #BDBDBD;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  .v-center {
+    display: flex;
+    align-items: center;
+  }
+  p {
+    margin: 0;
+  }
+  .icon {
+    font-size: 1.4rem;
+    color: #212121;
+  }
+}

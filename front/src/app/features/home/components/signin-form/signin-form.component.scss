@@ -1,0 +1,14 @@
+.blured {
+  opacity: 0.75;
+}
+
+.v-center {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+.pull-down {
+  bottom: 0;
+  position: absolute;
+}

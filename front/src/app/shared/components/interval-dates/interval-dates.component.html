@@ -1,0 +1,29 @@
+<div class="row" [formGroup]="formGroup">
+    <mat-input-container [class]="inline ? 'col-md-6' :'col-md-12'">
+        <input matInput
+               readonly
+               (focus)="datePickerStart.open()"
+               [matDatepicker]="datePickerStart"
+               [min]="startDateConstraints.min"
+               [max]="startDateConstraints.max"
+               placeholder="Date de début"
+               formControlName="dateDebut">
+
+        <mat-datepicker-toggle matSuffix [for]="datePickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #datePickerStart></mat-datepicker>
+    </mat-input-container>
+
+    <mat-input-container [class]="inline ? 'col-md-6' :'col-md-12'">
+        <input matInput
+               readonly
+               (focus)="datePickerEnd.open()"
+               [matDatepicker]="datePickerEnd"
+               [min]="endDateConstraints.min"
+               [max]="endDateConstraints.max"
+               placeholder="Date de fin"
+               formControlName="dateFin">
+
+        <mat-datepicker-toggle matSuffix [for]="datePickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #datePickerEnd></mat-datepicker>
+    </mat-input-container>
+</div>

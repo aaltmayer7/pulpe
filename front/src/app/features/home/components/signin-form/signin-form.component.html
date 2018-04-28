@@ -1,0 +1,85 @@
+<div class="row v-center">
+  <div class="col-md-12">
+    <mat-card class="p-0 blured">
+      <div class="row">
+        <div class="col-md-4 col-12">
+          <div class="pt-0 bg-primary-color h-100">
+            <div class="row h-100">
+              <div class="col-sm-12 my-auto text-center">
+                <img src="../../../../../assets/img/logo.png" class="w-25">
+                <div class="pt-2">
+                  <h1>Pulpe</h1>
+                  <h2>Connectez-vous!</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pt-0 white">
+                <div class="col-md-12 col-12 pt-2">
+                  <h2 class="pt-1 text-center text-md-left text-primary">Connexion</h2>
+                </div>
+                <form (submit)="onSignin()" [formGroup]="formGroup">
+                  <div class="form-group">
+                    <i class="col-md-1 offset-1 col-2 text-center fa fa-2x fa-envelope prefix my-auto pr-0"></i>
+                    <mat-input-container class="col-7 col-md-8" color="primary" ngxErrors="email">
+                      <input id="inputEmail" matInput type="email" email
+                             placeholder="Saisissez votre email"
+                             formControlName="email"
+                             required>
+                      <mat-error ngxError="required" [when]="['dirty']"
+                                 class="form-control-feedback">
+                        Votre email est obligatoire.
+                      </mat-error>
+                    </mat-input-container>
+                  </div>
+                  <div class="form-group">
+                    <i class="col-md-1 offset-1 col-2 text-center fa fa-2x fa-lock prefix my-auto pr-0"></i>
+                    <mat-input-container class="col-7 col-md-8" ngxErrors="password">
+                      <input id="inputPassword" type="password" matInput
+                             placeholder="Saisissez votre mot de passe"
+                             formControlName="password"
+                             required>
+                      <mat-error ngxError="required" [when]="['dirty']"
+                                 class="form-control-feedback">
+                        Votre mot de passe est obligatoire.
+                      </mat-error>
+                      <mat-error ngxError="minlength" [when]="['dirty']" align="bottom"
+                                 class="form-control-feedback">
+                        Le mot de passe doit md-hintfaire au minimum 6 caractères.
+                      </mat-error>
+                    </mat-input-container>
+                  </div>
+                  <div class="form-group">
+                    <mat-checkbox class="offset-md-2 col-md-10 offset-3 col-9"
+                                  formControlName="rememberMe">Se souvenir de moi
+                    </mat-checkbox>
+                  </div>
+                  <div class="form-group mb-3 col-md-12">
+                    <div class="row">
+                      <div class="col-md-7 col-12 hidden-sm-down">
+                        <div class="text-center text-md-left text-black-primary pull-down">
+                          <p class="mb-0 d-inline">Vous n'avez pas de compte ?</p>
+                          <a routerLink="/inscription" class="d-inline-block" href>Inscrivez-vous</a>
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-12">
+                        <button mat-raised-button color="primary" class="w-100" [disabled]="formGroup.invalid">
+                          Se connecter
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

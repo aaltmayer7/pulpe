@@ -1,0 +1,12 @@
+@import '../../../node_modules/@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+// import our custom themes
+@import 'pulpe-theme';
+
+.pulpe-theme {
+  @include angular-material-theme($my-theme);
+}
+

@@ -1,0 +1,17 @@
+//////////////////////////////
+// Theming
+//////////////////////////////
+@import 'theming/angular-mat-themes.scss';
+@import 'custom/bootstrap.scss';
+@import 'custom/material.scss';
+
+//////////////////////////////
+// Librairies
+//////////////////////////////
+@import '../../node_modules/ngx-toastr/toastr.css';
+@import '../../node_modules/font-awesome/css/font-awesome.css';
+
+//////////////////////////////
+// App
+//////////////////////////////
+@import 'app-global.scss';
