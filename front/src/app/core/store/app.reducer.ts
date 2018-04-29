@@ -46,7 +46,6 @@ export const metaReducers: MetaReducer<AppState>[] = !environment.production
 /**
  * MetaReducer
  * Reinitialisation du store
- * TODO : for disconnect action.
  *
  * @param reducer
  * @returns {(state, action) => any}
@@ -55,6 +54,7 @@ export function userSessionMetaReducer(reducer) {
   return function newReducer(state, action) {
     if (action.type === UserSessionActionTypes.Logout) {
       state = undefined;
+      debugger
     }
     return reducer(state, action);
   };

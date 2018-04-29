@@ -15,7 +15,7 @@ export const selectToken = createSelector(
   (state: UserSessionState) => state.token,
 );
 
-export const selectAuthProfile = createSelector(
+export const selectIsCoach = createSelector(
   selectFeature,
-  adapterSelectors.selectAll[0],
+  (state: UserSessionState) => state.isCoach,
 );

@@ -1,3 +1,8 @@
-<p>
-  dashboard works!
-</p>
+<ng-container *ngIf="(isCoach$ | async) as isCoach">
+  <div [@fadeIn]>
+    <pulpe-coach-dashboard *ngIf="isCoach; else member"></pulpe-coach-dashboard>
+    <ng-template #member>
+      <pulpe-member-dashboard></pulpe-member-dashboard>
+    </ng-template>
+  </div>
+</ng-container>

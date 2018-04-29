@@ -6,7 +6,7 @@ import {UserSessionState} from '../../features/home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {map, tap} from 'rxjs/operators';
 import {LocalStorageService} from 'angular-2-local-storage';
-import {AuthService} from '../../features/services/auth.service';
+import {AuthService} from '../../features/home/services/auth.service';
 import {AuthenticationProfile} from '../../features/home/models/authentication-profile.model';
 import {SigninSuccess} from '../../features/home/store/user-session.action';
 

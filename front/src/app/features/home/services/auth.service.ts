@@ -21,7 +21,7 @@ export class AuthService {
   signin(auth: AuthenticationProfile): Observable<AuthenticationProfile> {
     return this.http.post<AuthenticationProfile>(
       `${environment.baseUrl()}/signin`, {
-        email: auth.login,
+        email: auth.email,
         password: auth.password,
       },
     );
@@ -35,7 +35,7 @@ export class AuthService {
   signup(auth): Observable<AuthenticationProfile> {
     return this.http.post<AuthenticationProfile>(
       `${environment.baseUrl()}/signup`, {
-        email: auth.login,
+        email: auth.email,
         password: auth.password,
         lastname: auth.lastName,
         firstname: auth.firstName,

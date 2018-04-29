@@ -13,7 +13,7 @@ const routes: Routes = [
     canActivate: [AuthenticateGuard],
     children: [
       {
-        path: '',
+        path: 'home',
         loadChildren: 'app/features/dashboard/dashboard.module#DashboardModule',
       },
     ],

@@ -14,10 +14,10 @@ export class SigninFormComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.buildForm();
   }
 
   ngOnInit(): void {
+    this.buildForm();
   }
 
   private buildForm(): void {

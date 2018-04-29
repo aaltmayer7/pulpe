@@ -1,6 +1,6 @@
 export interface AuthenticationProfile {
   id: string;
-  login: string;
+  email: string;
   password: string;
   token?: string;
   lastName: string;

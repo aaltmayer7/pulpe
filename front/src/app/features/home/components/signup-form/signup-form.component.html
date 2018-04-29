@@ -1,3 +1,120 @@
-<p>
-  signup-form works!
-</p>
+<div class="row mt-md-5 mb-4">
+  <div class="col-md-12">
+    <mat-card class="p-0 blured">
+      <div class="row">
+        <div class="col-md-4 col-12">
+          <div class="pt-0 bg-primary-color h-100">
+            <div class="row h-100">
+              <div class="col-sm-12 my-auto text-center">
+                <img src="../../../../../assets/img/logo.png" class="w-25">
+                <div class="pt-2">
+                  <h1>Pulpe</h1>
+                  <h2>Inscrivez-vous!</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pt-0 white">
+                <div class="col-md-12 col-12 pt-2">
+                  <h2 class="pt-1 text-center text-md-left text-primary">Inscription</h2>
+                </div>
+                <form (submit)="onSignup()" [formGroup]="formGroup">
+                  <div class="form-group">
+                    <i class="col-md-1 offset-1 col-2 text-center fa fa-user prefix my-auto pr-0"></i>
+                    <mat-input-container class="col-7 col-md-8" ngxErrors="lastName">
+                      <input id="inputLastname" matInput
+                             type="text"
+                             placeholder="Saisissez votre nom"
+                             formControlName="lastName"
+                             required>
+                      <mat-error ngxError="required" [when]="['dirty']">
+                        Votre nom est obligatoire.
+                      </mat-error>
+                    </mat-input-container>
+                  </div>
+
+                  <div class="form-group">
+                    <mat-input-container class="col-7 col-md-8 offset-md-2 offset-3"
+                                        ngxErrors="firstName">
+                      <input id="inputFirstName" matInput
+                             type="text"
+                             placeholder="Saisissez votre prénom"
+                             formControlName="firstName"
+                             required>
+                      <mat-error ngxError="required" [when]="['dirty']"
+                               class="form-control-feedback">Votre prénom est obligatoire.
+                      </mat-error>
+                    </mat-input-container>
+                  </div>
+
+                  <div class="form-group">
+                    <i class="col-md-1 offset-1 col-2 text-center fa  fa-envelope prefix my-auto pr-0"></i>
+                    <mat-input-container class="col-7 col-md-8" ngxErrors="firstName">
+                      <input id="inputEmail" matInput email
+                             type="email"
+                             placeholder="Saisissez votre email"
+                             formControlName="email"
+                             required>
+                      <mat-error ngxError="required" [when]="['dirty']"
+                               class="form-control-feedback">Votre email est obligatoire.
+                      </mat-error>
+                    </mat-input-container>
+                  </div>
+
+                  <div formGroupName="passwordForm">
+                    <div class="form-group">
+                      <i class="col-md-1 offset-1 col-2 text-center fa  fa-lock prefix my-auto pr-0"></i>
+                      <mat-input-container class="col-7 col-md-8">
+                        <input id="inputPassword" type="password" matInput
+                               placeholder="Saisissez votre mot de passe"
+                               formControlName="password"
+                               required>
+                      </mat-input-container>
+                    </div>
+                    <div class="form-group">
+                      <i class="col-md-1 offset-1 col-2 text-center fa  fa-lock prefix my-auto pr-0"></i>
+                      <mat-input-container class="col-7 col-md-8">
+                        <input id="inputConfirmPassword" type="password" matInput
+                               placeholder="Veuillez confirmer votre mot de passe"
+                               formControlName="confirmPassword" required>
+                      </mat-input-container>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <i class="col-md-1 offset-1 col-2 text-center fa  fa-id-badge prefix my-auto pr-0"></i>
+                    <mat-radio-group formControlName="isCoach" class="col-7 col-md-8">
+                      <mat-radio-button checked="true" value="member">Membre</mat-radio-button>
+                      <mat-radio-button class="pl-4" value="coach">Coach</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                  <div class="form-group mb-3 col-md-12">
+
+                    <div class="row">
+                      <div class="col-md-7 col-12 hidden-sm-down">
+                        <div class="text-center text-md-left text-black-primary pull-down">
+                          <p class="mb-0 d-inline">Vous avez déja un compte ?</p>
+                          <a routerLink="/connexion" class="d-inline-block" href>Connectez-vous</a>
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-12">
+                        <button mat-raised-button color="primary" type="button" class="w-100" type="submit"
+                                [disabled]="formGroup.invalid">
+                          S'inscrire
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

@@ -5,13 +5,15 @@ import {AuthenticationProfile} from '../models/authentication-profile.model';
 export interface UserSessionState extends EntityState<AuthenticationProfile> {
   token: string;
   authenticated: boolean;
+  isCoach: boolean;
 }
 
 export const adapter: EntityAdapter<AuthenticationProfile> = createEntityAdapter<AuthenticationProfile>({});
 
 export const initialState: UserSessionState = adapter.getInitialState({
   token: undefined,
-  authenticated: false
+  authenticated: false,
+  isCoach : false
 });
 
 
@@ -19,19 +21,14 @@ export function userSessionReducer(state: UserSessionState = initialState,
                                    action: UserSessionAction) {
   switch (action.type) {
 
-    case UserSessionActionTypes.Signin: {
-      return {
-        ...state,
-      };
-    }
-
     case UserSessionActionTypes.SigninSuccess: {
       const authProfile: AuthenticationProfile = action.payload;
-      return adapter.addOne(authProfile, {
+      return {
         ...state,
         token: authProfile.token,
+        isCoach: authProfile.isCoach,
         authenticated: true,
-      });
+      };
     }
 
     case UserSessionActionTypes.SigninError: {
@@ -42,19 +39,14 @@ export function userSessionReducer(state: UserSessionState = initialState,
       };
     }
 
-    case UserSessionActionTypes.Signup: {
-      return {
-        ...state,
-      };
-    }
-
     case UserSessionActionTypes.SignupSuccess: {
       const authProfile: AuthenticationProfile = action.payload;
-      return adapter.addOne(authProfile, {
+      return {
         ...state,
         token: authProfile.token,
+        isCoach: authProfile.isCoach,
         authenticated: true,
-      });
+      };
     }
 
     case UserSessionActionTypes.SignupError: {
@@ -62,12 +54,6 @@ export function userSessionReducer(state: UserSessionState = initialState,
         ...state,
         token: undefined,
         authenticated: false,
-      };
-    }
-
-    case UserSessionActionTypes.Logout: {
-      return {
-        ...state
       };
     }
 

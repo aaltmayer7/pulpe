@@ -12,6 +12,7 @@ import {IntervalDatesComponent} from './components/interval-dates/interval-dates
     ReactiveFormsModule,
   ],
   exports: [
+    CommonModule,
     NgxErrorsModule,
     MaterialModule,
     ReactiveFormsModule,
