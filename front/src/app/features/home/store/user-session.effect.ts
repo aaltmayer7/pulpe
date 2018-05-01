@@ -5,7 +5,7 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 
 import {Action} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
-import {AuthService} from '../services/auth.service';
+import {AuthService} from '../../../core/services/auth.service';
 import {Logout, Signin, SigninError, SigninSuccess, Signup, SignupError, UserSessionActionTypes} from './user-session.action';
 import {AuthenticationProfile} from '../models/authentication-profile.model';
 import {of} from 'rxjs/observable/of';

@@ -11,11 +11,12 @@ import {SigninFormComponent} from './components/signin-form/signin-form.componen
 import {SignupFormComponent} from './components/signup-form/signup-form.component';
 import {WelcomeContentComponent} from './components/welcome-content/welcome-content.component';
 import {AuthenticateGuard} from '../../core/guards/authenticate.guard';
-import {AuthService} from './services/auth.service';
+import {AuthService} from '../../core/services/auth.service';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {userSessionReducer} from './store/user-session.reducer';
 import {UserSessionEffects} from './store/user-session.effect';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import {UserSessionEffects} from './store/user-session.effect';
     SignupComponent,
     SigninFormComponent,
     SignupFormComponent,
+    SidenavComponent,
   ],
   providers: [
     AuthService,
