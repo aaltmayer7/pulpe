@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
+import {Machine} from '../../models/machine.model';
 
 @Component({
   selector: 'pulpe-machines-list',
@@ -7,8 +8,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MachinesListComponent implements OnInit {
+  @Input() machines: Machine[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

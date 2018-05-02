@@ -14,6 +14,9 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
 import {LocalStorageModule} from 'angular-2-local-storage';
 import {CustomSerializer} from './store/router.reducer';
+import {AuthService} from './services/auth.service';
+import {CoachGuard} from './guards/coach.guard';
+import {AuthenticateGuard} from './guards/authenticate.guard';
 
 @NgModule({
   imports: [
@@ -44,6 +47,10 @@ import {CustomSerializer} from './store/router.reducer';
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     {provide: RouterStateSerializer, useClass: CustomSerializer},
+    // Singleton services
+    AuthService,
+    CoachGuard,
+    AuthenticateGuard
   ],
 })
 export class CoreModule {

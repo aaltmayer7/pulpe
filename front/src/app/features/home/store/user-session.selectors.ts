@@ -9,3 +9,8 @@ export const selectAuthProfile = createSelector(
   selectFeature,
   (state: UserSessionState) => state.authProfile,
 );
+
+export const selectAuthenticated = createSelector(
+  selectFeature,
+  (state: UserSessionState) => state.authenticated,
+);

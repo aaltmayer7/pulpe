@@ -4,12 +4,14 @@ import {AuthenticationProfile} from '../models/authentication-profile.model';
 
 export interface UserSessionState extends EntityState<AuthenticationProfile> {
   authProfile: AuthenticationProfile;
+  authenticated: boolean;
 }
 
 export const adapter: EntityAdapter<AuthenticationProfile> = createEntityAdapter<AuthenticationProfile>({});
 
 export const initialState: UserSessionState = adapter.getInitialState({
-  authProfile: {} as AuthenticationProfile
+  authProfile: undefined,
+  authenticated: false
 });
 
 
@@ -22,6 +24,7 @@ export function userSessionReducer(state: UserSessionState = initialState,
       return {
         ...state,
         authProfile: authProfile,
+        authenticated: true
       };
     }
 
@@ -29,6 +32,7 @@ export function userSessionReducer(state: UserSessionState = initialState,
       return {
         ...state,
         authProfile: undefined,
+        authenticated: false
       };
     }
 
@@ -37,6 +41,7 @@ export function userSessionReducer(state: UserSessionState = initialState,
       return {
         ...state,
         authProfile: authProfile,
+        authenticated: true
       };
     }
 
@@ -44,6 +49,7 @@ export function userSessionReducer(state: UserSessionState = initialState,
       return {
         ...state,
         authProfile: undefined,
+        authenticated: false
       };
     }
 
