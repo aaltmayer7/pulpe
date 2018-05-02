@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
-import {selectAuthenticated} from '../../features/home/store/user-session.selectors';
+import {selectAuthProfile} from '../../features/home/store/user-session.selectors';
 import {UserSessionState} from '../../features/home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {map, tap} from 'rxjs/operators';
@@ -21,13 +21,12 @@ export class AuthenticateGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): Observable<boolean> {
-    return this.store.select(selectAuthenticated).pipe(
-      tap(authenticated => {
-        debugger
-        if (!authenticated) {
+    return this.store.select(selectAuthProfile).pipe(
+      tap((authProfile: AuthenticationProfile) => {
+        if (authProfile && !authProfile.token) {
           if (this.authService.authenticated()) {
             const authProfile: AuthenticationProfile = this.localStorageService.get('profile');
-            this.store.dispatch(new SigninSuccess(authProfile),);
+            this.store.dispatch(new SigninSuccess(authProfile));
           } else {
             this.router.navigate(['/accueil']);
           }

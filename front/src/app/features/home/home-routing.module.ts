@@ -16,6 +16,18 @@ const routes: Routes = [
         path: 'home',
         loadChildren: 'app/features/dashboard/dashboard.module#DashboardModule',
       },
+      {
+        path: 'adherents',
+        loadChildren: 'app/features/adherent/adherent.module#AdherentModule',
+      },
+      {
+        path: 'exercices',
+        loadChildren: 'app/features/exercice/exercice.module#ExerciceModule',
+      },
+      {
+        path: 'machines',
+        loadChildren: 'app/features/machine/machine.module#MachineModule',
+      },
     ],
   },
   {

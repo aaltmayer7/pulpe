@@ -2,15 +2,15 @@ import {Action} from '@ngrx/store';
 import {AuthenticationProfile} from '../models/authentication-profile.model';
 
 export enum UserSessionActionTypes {
-  Signin = '[USER SESSION] Signin',
-  SigninSuccess = '[USER SESSION] Signin Success',
-  SigninError = '[USER SESSION] Signin Error',
+  Signin = '[User Session] Signin',
+  SigninSuccess = '[User Session] Signin Success',
+  SigninError = '[User Session] Signin Error',
 
-  Signup = '[USER SESSION] Signup',
-  SignupSuccess = '[USER SESSION] Signup Success',
-  SignupError = '[USER SESSION] Signup Error',
+  Signup = '[User Session] Signup',
+  SignupSuccess = '[User Session] Signup Success',
+  SignupError = '[User Session] Signup Error',
 
-  Logout = '[USER SESSION] Logout',
+  Logout = '[User Session] Logout',
 }
 
 /**

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'pulpe-navbar',
@@ -7,10 +7,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
+  @Output() toggled: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onToggle(): void {
+    this.toggled.emit();
+  }
 }

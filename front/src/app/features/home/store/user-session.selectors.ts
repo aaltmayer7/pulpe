@@ -5,17 +5,7 @@ export const selectFeature = createFeatureSelector<UserSessionState>('userSessio
 
 const adapterSelectors = adapter.getSelectors();
 
-export const selectAuthenticated = createSelector(
+export const selectAuthProfile = createSelector(
   selectFeature,
-  (state: UserSessionState) => state.authenticated,
-);
-
-export const selectToken = createSelector(
-  selectFeature,
-  (state: UserSessionState) => state.token,
-);
-
-export const selectIsCoach = createSelector(
-  selectFeature,
-  (state: UserSessionState) => state.isCoach,
+  (state: UserSessionState) => state.authProfile,
 );

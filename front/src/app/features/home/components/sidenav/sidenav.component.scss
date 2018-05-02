@@ -1,0 +1,75 @@
+@import "../../../../../style/const/colors";
+
+.sidenav {
+  background-image: url("../../../../../assets/img/sidebar.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+}
+
+.sidenav__container {
+  background-color: $primary-color;
+  width: 17rem !important;
+  height: 100%;
+  opacity: .8;
+}
+
+.sidenav__logo {
+  border-bottom: 1px white;
+  text-align: center !important;
+  padding-top: 0.5rem !important;
+}
+
+.sidenav__items {
+  padding-top: 8rem !important;
+}
+
+.sidenav__items-label {
+  font-size: 0.95rem !important;
+  font-weight: 100;
+}
+
+.mat-list-item {
+  color: $white-color !important;
+
+  &:hover {
+    color: $primary-color !important;
+
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .13s;
+
+    box-shadow: 0 12px 20px -10px rgba(255, 255, 255, .28), 0 4px 20px 0 rgba(255, 255, 255, .12), 0 7px 8px -5px rgba(255, 255, 255, .2);
+    background-color: $white-color !important;
+  }
+}
+
+.active {
+  color: $primary-color !important;
+
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: .13s;
+
+  box-shadow: 0 12px 20px -10px rgba(255, 255, 255, .28), 0 4px 20px 0 rgba(255, 255, 255, .12), 0 7px 8px -5px rgba(255, 255, 255, .2);
+  background-color: $white-color !important;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+i {
+  font-size: 1.7rem !important;
+  padding-left: 2rem !important;
+  padding-right: 1.5rem !important;
+}

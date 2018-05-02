@@ -1,4 +1,11 @@
-<pulpe-navbar></pulpe-navbar>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="true">
+    <pulpe-sidenav [authProfile]="authProfile$ | async"></pulpe-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <pulpe-navbar (toggled)="onToggle()"></pulpe-navbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
