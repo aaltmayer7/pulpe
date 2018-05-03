@@ -12,7 +12,6 @@ import {map} from 'rxjs/operator/map';
 @Injectable()
 export class CoachGuard implements CanActivate {
   constructor(private store: Store<UserSessionState>) {
-
   }
 
   canActivate(): Observable<boolean> {

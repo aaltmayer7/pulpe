@@ -17,18 +17,18 @@ export class MachinesService {
   }
 
   merge(machine: Machine): Observable<Machine> {
-    return machine.id ? this.update(machine) : this.create(machine);
+    return machine._id ? this.update(machine) : this.create(machine);
   }
 
   delete(machine: Machine): Observable<Machine> {
     return this.http.delete<Machine>(
-      `${environment.baseUrl()}/machines/${machine.id}`,
+      `${environment.baseUrl()}/machines/${machine._id}`,
     );
   }
 
   private update(machine: Machine): Observable<Machine> {
     return this.http.put<Machine>(
-      `${environment.baseUrl()}/machines/${machine.id}`,
+      `${environment.baseUrl()}/machines/${machine._id}`,
       machine,
     );
   }

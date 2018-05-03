@@ -4,6 +4,7 @@ import {NgxErrorsModule} from '@ultimate/ngxerrors';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material/material.module';
 import {IntervalDatesComponent} from './components/interval-dates/interval-dates.component';
+import {MatInputSearchComponent} from './components/mat-input-search/mat-input-search.component';
 
 @NgModule({
   imports: [
@@ -17,8 +18,12 @@ import {IntervalDatesComponent} from './components/interval-dates/interval-dates
     MaterialModule,
     ReactiveFormsModule,
     IntervalDatesComponent,
+    MatInputSearchComponent,
   ],
-  declarations: [IntervalDatesComponent]
+  declarations: [
+    IntervalDatesComponent,
+    MatInputSearchComponent,
+  ],
 })
 export class SharedModule {
 }

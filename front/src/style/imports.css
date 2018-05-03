@@ -8375,7 +8375,9 @@ body {
 button,
 a,
 i {
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none !important;
+  border: 0 !important; }
 
 .brand {
   font-size: 1.7rem;

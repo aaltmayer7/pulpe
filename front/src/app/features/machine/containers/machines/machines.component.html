@@ -1,3 +1,5 @@
 <div [@fadeIn]>
-  <pulpe-machines-list [machines]="machines$ | async"></pulpe-machines-list>
+  <pulpe-machines-list [machines]="machines$ | async"
+                       (deleted)="onDelete($event)">
+  </pulpe-machines-list>
 </div>

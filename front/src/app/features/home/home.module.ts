@@ -15,6 +15,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {userSessionReducer} from './store/user-session.reducer';
 import {UserSessionEffects} from './store/user-session.effect';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     SigninFormComponent,
     SignupFormComponent,
     SidenavComponent,
+    HeaderComponent,
   ],
 })
 export class HomeModule {

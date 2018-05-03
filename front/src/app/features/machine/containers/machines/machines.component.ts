@@ -22,6 +22,9 @@ export class MachinesComponent implements OnInit {
 
   ngOnInit(): void {
     this.machines$ = this.store.select(selectAllMachines);
-    this.store.dispatch(new LoadAllMachines());
+  }
+
+  onDelete(machine:Machine) : void {
+    debugger
   }
 }

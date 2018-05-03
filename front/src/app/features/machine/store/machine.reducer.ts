@@ -8,8 +8,7 @@ export interface MachineState extends EntityState<Machine> {
 }
 
 export const adapter: EntityAdapter<Machine> = createEntityAdapter<Machine>({
-  selectId: (machine: Machine) => machine.id,
-  sortComparer: false,
+  selectId: (machine: Machine) => machine._id
 });
 
 export const initialState: MachineState = adapter.getInitialState({
@@ -18,15 +17,13 @@ export const initialState: MachineState = adapter.getInitialState({
 });
 
 export function machineReducer(state: MachineState = initialState,
-                                   action: MachineAction) {
+                               action: MachineAction) {
   switch (action.type) {
 
     case MachineActionsTypes.LoadAll: {
       return {
         ...state,
         loading: true,
-        saving: false,
-        saved: false,
       };
     }
 

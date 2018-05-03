@@ -25,8 +25,8 @@ export const selectCountMachines = createSelector(
   adapterSelectors.selectTotal,
 );
 
-export const selectImmobilisationById = id =>
+export const selectMachineById = id =>
   createSelector(selectAllMachines, items => {
-      return items.find(machine => machine.id === id);
+      return items.find(machine => machine._id === id);
     }
   );

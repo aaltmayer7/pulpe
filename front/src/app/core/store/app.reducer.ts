@@ -54,7 +54,6 @@ export function userSessionMetaReducer(reducer) {
   return function newReducer(state, action) {
     if (action.type === UserSessionActionTypes.Logout) {
       state = undefined;
-      debugger
     }
     return reducer(state, action);
   };

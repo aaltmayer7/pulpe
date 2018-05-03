@@ -12,8 +12,6 @@ export enum MachineActionsTypes {
  */
 export class LoadAllMachines implements Action {
   readonly type = MachineActionsTypes.LoadAll;
-
-  constructor(public payload = undefined) {}
 }
 
 export class LoadAllMachinesSuccess implements Action {

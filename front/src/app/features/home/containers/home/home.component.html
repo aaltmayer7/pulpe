@@ -4,6 +4,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <pulpe-navbar (toggled)="onToggle()"></pulpe-navbar>
+    <pulpe-header [title]="title$ | async"></pulpe-header>
     <div class="container">
       <router-outlet></router-outlet>
     </div>

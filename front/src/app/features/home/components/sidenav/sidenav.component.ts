@@ -30,6 +30,12 @@ export class SidenavComponent implements OnInit {
   private get coachRoutes(): Nav[] {
     return [
       {
+        label: 'Accueil',
+        path: '/home',
+        exact: true,
+        iconClasses: 'fa fa-home'
+      },
+      {
         label: 'Adhérents',
         path: '/adherents',
         exact: true,

@@ -8,7 +8,7 @@ import {Observable} from 'rxjs/Observable';
 import {of} from 'rxjs/observable/of';
 import {ToastrService} from 'ngx-toastr';
 import {HttpErrorResponse} from '@angular/common/http';
-import {LoadAllMachines, LoadAllMachinesError, MachineActionsTypes} from './machine.action';
+import {LoadAllMachines, LoadAllMachinesError, LoadAllMachinesSuccess, MachineActionsTypes} from './machine.action';
 import {MachinesService} from '../services/machines.service';
 
 @Injectable()
@@ -24,11 +24,9 @@ export class MachineEffects {
     switchMap(() => {
       return this.machineService.findAll().pipe(
         map(
-          machines => new LoadAllMachines(machines),
+          machines => new LoadAllMachinesSuccess(machines),
         ),
-        catchError(error => {
-          return of(new LoadAllMachinesError(error));
-        }),
+        catchError(error => of(new LoadAllMachinesError(error))),
       );
     }),
   );

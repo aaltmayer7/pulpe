@@ -1,4 +1,7 @@
 mat-sidenav-container {
   height: 100% !important; }
 
+.container {
+  padding-top: 2.5rem !important; }
+
 /*# sourceMappingURL=home.component.css.map */

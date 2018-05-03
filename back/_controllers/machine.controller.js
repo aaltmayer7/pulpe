@@ -15,7 +15,7 @@ class MachineController {
     const id = req.user._id;
     MachineService.findAllByCoach(id)
       .then(machines => {
-        res.send({machines: machines});
+        res.send(machines);
       })
       .catch((error) => {
         winston.log('error', error.stack);

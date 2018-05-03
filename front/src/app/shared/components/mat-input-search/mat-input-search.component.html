@@ -1,0 +1,5 @@
+<mat-form-field>
+  <input matInput #searchInput (keyup)="onFilter($event.target.value)" [placeholder]="placeholder">
+  <span matPrefix><i class="fa fa-search pr-2"></i></span>
+  <span matSuffix><i class="fa fa-times pr-2" (click)="searchInput.value=''; onFilter('')"></i></span>
+</mat-form-field>

@@ -1,3 +1,10 @@
+import {Gym} from './gym.model';
+import {WorkedMuscle} from './worked-muscles.model';
+
 export interface Machine {
-  id: string
+  _id: string;
+  name: string;
+  comment: string;
+  workedMuscles: WorkedMuscle[];
+  gym: Gym;
 }

@@ -4,7 +4,7 @@ import {environment} from '../../../environments/environment';
 import {AuthenticationProfile} from '../../features/home/models/authentication-profile.model';
 import {HttpClient} from '@angular/common/http';
 import {LocalStorageService} from 'angular-2-local-storage';
-import {JwtHelper, tokenNotExpired} from 'angular2-jwt/angular2-jwt';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable()
 export class AuthService {
@@ -56,7 +56,7 @@ export class AuthService {
    * @returns {boolean}
    */
   public authenticated(): boolean {
-    const jwtHelper: JwtHelper = new JwtHelper();
+    const jwtHelper: JwtHelperService = new JwtHelperService();
     const {token} = this.localStorageService.get('profile');
     return token && !jwtHelper.isTokenExpired(token);
   }

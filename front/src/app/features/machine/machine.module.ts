@@ -8,6 +8,7 @@ import {machineReducer} from './store/machine.reducer';
 import {StoreModule} from '@ngrx/store';
 import {EffectsModule} from '@ngrx/effects';
 import {MachineEffects} from './store/machine.effect';
+import {MachinesGuard} from './guards/machines.guard';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {MachineEffects} from './store/machine.effect';
     MachinesComponent
   ],
   providers : [
-    MachinesService
+    MachinesService,
+    MachinesGuard,
   ]
 })
 export class MachineModule {

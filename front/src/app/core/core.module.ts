@@ -17,27 +17,42 @@ import {CustomSerializer} from './store/router.reducer';
 import {AuthService} from './services/auth.service';
 import {CoachGuard} from './guards/coach.guard';
 import {AuthenticateGuard} from './guards/authenticate.guard';
+import {JwtModule} from '@auth0/angular-jwt';
+import {MatPaginatorIntl} from '@angular/material';
+import {CustomPaginator} from '../shared/provides/paginator.custom';
 
 @NgModule({
   imports: [
-    ToastrModule.forRoot(),
     StoreModule.forRoot(reducers, {metaReducers}),
     StoreRouterConnectingModule,
     EffectsModule.forRoot([RouterEffects]),
     StoreDevtoolsModule.instrument({maxAge: 10}),
 
     NgProgressModule.forRoot({
-      spinnerPosition: 'right',
-      color: '#FF5722',
-      thick: false,
+      spinnerPosition: 'left',
+      color: '#FFFFFF',
+      thick: false
+    }),
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return JSON.parse(localStorage.getItem('profile')).token;
+        },
+        headerName: 'authorization',
+        whitelistedDomains: ['localhost:5000']
+      }
     }),
 
     LocalStorageModule.withConfig({
       prefix: '',
       storageType: 'localStorage'
-    })
+    }),
+
+    ToastrModule.forRoot()
   ],
-  exports: [BrowserModule,
+  exports: [
+    BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
     HttpClientModule,
@@ -47,6 +62,7 @@ import {AuthenticateGuard} from './guards/authenticate.guard';
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-FR'},
     {provide: RouterStateSerializer, useClass: CustomSerializer},
+    {provide: MatPaginatorIntl, useClass: CustomPaginator},
     // Singleton services
     AuthService,
     CoachGuard,
