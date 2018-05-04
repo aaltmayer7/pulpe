@@ -1,16 +1,16 @@
 <div class="sidenav">
-  <div class="sidenav__container">
-    <div class="sidenav__logo">
+  <div class="sidenav-container">
+    <div class="sidenav-logo">
       <img [src]="logo" width="65%">
     </div>
-    <div class="sidenav__items">
+    <div class="sidenav-items">
       <mat-nav-list *ngFor="let route of routes" class="pb-1">
         <a mat-list-item
            routerLinkActive="active"
            [routerLink]="route.path"
            [routerLinkActiveOptions]="{exact:route.exact}">
           <i mat-list-icon [class]="route.iconClasses"></i>
-          <span class="sidenav__items-label">{{route.label}}</span>
+          <span class="sidenav-items-label">{{route.label}}</span>
         </a>
       </mat-nav-list>
     </div>

@@ -20,6 +20,8 @@ import {AuthenticateGuard} from './guards/authenticate.guard';
 import {JwtModule} from '@auth0/angular-jwt';
 import {MatPaginatorIntl} from '@angular/material';
 import {CustomPaginator} from '../shared/provides/paginator.custom';
+import {AuthenticationProfile} from '../features/home/models/authentication-profile.model';
+import {environment} from '../../environments/environment';
 
 @NgModule({
   imports: [
@@ -29,18 +31,16 @@ import {CustomPaginator} from '../shared/provides/paginator.custom';
     StoreDevtoolsModule.instrument({maxAge: 10}),
 
     NgProgressModule.forRoot({
-      spinnerPosition: 'left',
-      color: '#FFFFFF',
+      spinnerPosition: 'right',
+      color: '#555',
       thick: false
     }),
 
     JwtModule.forRoot({
       config: {
-        tokenGetter: () => {
-          return JSON.parse(localStorage.getItem('profile')).token;
-        },
+        tokenGetter: getToken(),
         headerName: 'authorization',
-        whitelistedDomains: ['localhost:5000']
+        whitelistedDomains: [`${environment.domain}:${environment.port}`]
       }
     }),
 
@@ -87,3 +87,15 @@ function throwIfAlreadyLoaded(parentModule: any, moduleName: string) {
   }
 }
 
+function getToken(): () => string {
+  return () => {
+    let authProfile: AuthenticationProfile;
+    let token: string;
+    try {
+      authProfile = JSON.parse(localStorage.getItem('profile'));
+    } finally {
+      token = authProfile.token;
+    }
+    return token;
+  };
+};

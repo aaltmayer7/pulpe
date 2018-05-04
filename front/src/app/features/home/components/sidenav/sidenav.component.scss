@@ -7,25 +7,25 @@
   height: 100%;
 }
 
-.sidenav__container {
-  background-color: #212121;
-  width: 17rem !important;
+.sidenav-container {
+  background-color: $primary-color;
+  width: 16.5rem !important;
   height: 100%;
   opacity: .8;
   padding-top: 3rem !important;
 }
 
-.sidenav__logo {
+.sidenav-logo {
   border-bottom: 1px white;
   text-align: center !important;
   padding-top: 0.5rem !important;
 }
 
-.sidenav__items {
+.sidenav-items {
   padding-top: 8rem !important;
 }
 
-.sidenav__items-label {
+.sidenav-items-label {
   font-size: 0.95rem !important;
   font-weight: 100;
 }

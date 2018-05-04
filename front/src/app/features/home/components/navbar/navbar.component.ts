@@ -7,15 +7,10 @@ import {Component, OnInit, ChangeDetectionStrategy, EventEmitter, Output} from '
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
-  @Output() toggled: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
 
-  ngOnInit() {
-  }
-
-  onToggle(): void {
-    this.toggled.emit();
+  ngOnInit(): void {
   }
 }

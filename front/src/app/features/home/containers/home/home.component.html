@@ -1,12 +1,13 @@
 <mat-sidenav-container>
-  <mat-sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="true">
+  <mat-sidenav [mode]="mobileQuery.matches ? 'push' : 'side'" [opened]="true">
     <pulpe-sidenav [authProfile]="authProfile$ | async"></pulpe-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <pulpe-navbar (toggled)="onToggle()"></pulpe-navbar>
-    <pulpe-header [title]="title$ | async"></pulpe-header>
-    <div class="container">
-      <router-outlet></router-outlet>
+    <div class="container-fluid pt-4">
+      <pulpe-header [title]="title$ | async" (toggled)="onToggle()"></pulpe-header>
+      <div class="pt-5 pr-4 pl-4">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

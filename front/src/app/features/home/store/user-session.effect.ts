@@ -81,8 +81,10 @@ export class UserSessionEffects {
     ofType<SigninError | SignupError>(UserSessionActionTypes.SigninError, UserSessionActionTypes.SignupError),
     map(action => action.payload),
     map((err: HttpErrorResponse) => {
-      const {error} = err;
-      this.toastr.error(error.message);
+      if (err instanceof HttpErrorResponse) {
+        const {message} = err;
+        this.toastr.error(message);
+      }
     }),
   );
 }

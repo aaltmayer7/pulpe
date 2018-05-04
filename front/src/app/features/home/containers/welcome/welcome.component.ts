@@ -1,5 +1,6 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Renderer2} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
+import {Renderer3} from '@angular/core/src/render3/renderer';
 
 @Component({
   selector: 'pulpe-welcome',
@@ -10,11 +11,10 @@ import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
-
 
   ngOnInit(): void {
+    this.renderer.addClass(document.body, 'landing-page');
   }
-
 }

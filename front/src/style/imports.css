@@ -8370,7 +8370,8 @@ html,
 body {
   height: 100%;
   font: 300 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-color: #eee; }
+  background-color: #eeeeee !important;
+  color: #555; }
 
 button,
 a,
@@ -8385,5 +8386,21 @@ i {
 
 .blured {
   opacity: 0.75; }
+
+.landing-page {
+  margin: 0;
+  background: url("../assets/img/background.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: static; }
+  .landing-page:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .6; }
 
 /*# sourceMappingURL=imports.css.map */

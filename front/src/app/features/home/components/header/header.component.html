@@ -1,3 +1,13 @@
-<mat-toolbar [color]="'primary'">
-  {{title}}
+<mat-toolbar class="navbar bg-transparent">
+  <div class="pl-3">
+    <button mat-mini-fab color="primary" (click)="onToggle()">
+      <i class="fa fa-2x fa-bars"></i>
+    </button>
+    <span class="pl-3">{{title}}</span>
+  </div>
+  <div class="pr-3">
+    <button mat-icon-button>
+      <i class="fa fa-user"></i>
+    </button>
+  </div>
 </mat-toolbar>

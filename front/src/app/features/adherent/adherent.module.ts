@@ -1,18 +1,29 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {AdherentsComponent} from './containers/adherents/adherents.component';
 import {AdherentsListComponent} from './components/adherents-list/adherents-list.component';
 import {SharedModule} from '../../shared/shared.module';
 import {AdherentRoutingModule} from './adherent-routing.module';
+import {AdherentsService} from './services/adherents.service';
+import {AdherentsGuard} from './guards/adherents.guard';
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {AdherentsEffects} from './store/adherent.effect';
+import {adherentReducer} from './store/adherent.reducer';
 
 @NgModule({
   imports: [
     SharedModule,
-    AdherentRoutingModule
+    AdherentRoutingModule,
+    StoreModule.forFeature('adherent', adherentReducer),
+    EffectsModule.forFeature([AdherentsEffects]),
   ],
   declarations: [
     AdherentsComponent,
-    AdherentsListComponent
+    AdherentsListComponent,
+  ],
+  providers: [
+    AdherentsService,
+    AdherentsGuard,
   ]
 })
 export class AdherentModule {

@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'pulpe-header',
@@ -8,10 +8,15 @@ import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string;
+  @Output() toggled: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit(): void {
+  }
+
+  onToggle(): void {
+    this.toggled.emit();
+  }
 }

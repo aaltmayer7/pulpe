@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, SimpleChanges, OnChanges, AfterViewInit} from '@angular/core';
+import {Adherent} from '../../models/adherent.model';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'pulpe-adherents-list',
@@ -6,11 +8,41 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./adherents-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdherentsListComponent implements OnInit {
+export class AdherentsListComponent implements OnInit, OnChanges, AfterViewInit {
+  @Input() adherents: Adherent[];
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  dataSource: MatTableDataSource<Adherent>;
 
-  ngOnInit() {
+  displayedColumns: string[] = ['name', 'actions'];
+
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.adherents);
+    this.dataSource.filterPredicate = this.filterPredicate;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.dataSource) {
+      this.dataSource.data = this.adherents;
+    }
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+  onFilter(filter: string): void {
+    this.dataSource.filter = filter;
+  }
+
+  private get filterPredicate(): ((data: Adherent, filter: string) => boolean) {
+    return (adherent: Adherent, filter: string) => {
+      return adherent.firstName.toLowerCase().indexOf(filter.toLowerCase()) >= 0;
+    };
+  }
 }

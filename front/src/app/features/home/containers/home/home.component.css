@@ -1,7 +1,10 @@
 mat-sidenav-container {
   height: 100% !important; }
 
-.container {
-  padding-top: 2.5rem !important; }
+.sidenav-mini {
+  width: 6rem !important; }
+
+.sidenav-max {
+  width: 17rem !important; }
 
 /*# sourceMappingURL=home.component.css.map */

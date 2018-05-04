@@ -5,7 +5,8 @@ html,
 body {
   height: 100%;
   font: $font;
-  background-color: #eee;
+  background-color: #eeeeee !important;
+  color: $primary-text;
 }
 
 button,
@@ -23,4 +24,23 @@ i {
 
 .blured {
   opacity: 0.75;
+}
+
+.landing-page {
+  margin: 0;
+  background: url('../assets/img/background.jpg') no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  position: static;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: .6;
+  }
 }

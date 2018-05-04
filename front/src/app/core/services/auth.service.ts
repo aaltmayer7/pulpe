@@ -44,11 +44,10 @@ export class AuthService {
   }
 
   /**
-   * Logout an user then clear localStore.
+   * Logout an user by clearing LocalStorage.
    */
   logout(): void {
-    this.localStorageService.remove('token');
-    this.localStorageService.remove('program');
+    this.localStorageService.remove('profile');
   }
 
   /**

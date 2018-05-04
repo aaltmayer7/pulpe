@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, Renderer2} from '@angular/core';
 import {UserSessionState} from '../../store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {AuthenticationProfile} from '../../models/authentication-profile.model';
@@ -14,10 +14,12 @@ import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private store: Store<UserSessionState>) {
+  constructor(private store: Store<UserSessionState>,
+              private renderer: Renderer2) {
   }
 
   ngOnInit(): void {
+    this.renderer.addClass(document.body, 'landing-page');
   }
 
   onSignin(authProfile: AuthenticationProfile): void {

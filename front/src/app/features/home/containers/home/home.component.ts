@@ -1,7 +1,6 @@
-import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, ViewChild} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Renderer2, ViewChild} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {MatSidenav} from '@angular/material';
 import {Observable} from 'rxjs/Observable';
 import {AuthenticationProfile} from '../../models/authentication-profile.model';
 import {UserSessionState} from '../../store/user-session.reducer';
@@ -9,6 +8,7 @@ import {Store} from '@ngrx/store';
 import {selectAuthProfile} from '../../store/user-session.selectors';
 import {selectTitle} from '../../../../core/store/router.selector';
 import {RouterState} from '@angular/router';
+import {MatSidenav} from '@angular/material';
 
 @Component({
   selector: 'pulpe-home',
@@ -42,6 +42,8 @@ export class HomeComponent implements OnInit {
   }
 
   onToggle(): void {
-    this.sideNav.toggle();
+    if (this.mobileQuery.matches) {
+      this.sideNav.toggle();
+    }
   }
 }

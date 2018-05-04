@@ -1,4 +1,12 @@
 mat-toolbar {
+  position: relative;
+  color: #555 !important;
+  height: 50px;
+  font-size: 1.125rem;
+  padding: .625rem 0;
   font-weight: 300;
-  height: 5rem;
+}
+
+i {
+  font-size: 1.2rem !important;
 }

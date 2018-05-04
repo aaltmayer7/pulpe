@@ -25,6 +25,5 @@ export class MachinesComponent implements OnInit {
   }
 
   onDelete(machine:Machine) : void {
-    debugger
   }
 }
