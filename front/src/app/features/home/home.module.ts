@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {HomeComponent} from './containers/home/home.component';
 import {SharedModule} from '../../shared/shared.module';
 import {HomeRoutingModule} from './home-routing.module';
-import {NavbarComponent} from './components/navbar/navbar.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {WelcomeComponent} from './containers/welcome/welcome.component';
 import {WelcomeContentComponent} from './components/welcome-content/welcome-content.component';
@@ -25,7 +24,6 @@ import {AuthModule} from '../auth/auth.module';
   declarations: [
     HomeComponent,
     WelcomeComponent,
-    NavbarComponent,
     FooterComponent,
     WelcomeContentComponent,
     SidenavComponent,

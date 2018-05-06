@@ -30,6 +30,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import {
     MatInputModule,
     MatDialogModule,
     MatButtonModule,
+    OverlayModule,
   ],
   exports: [
     MatDatepickerModule,
@@ -67,6 +69,7 @@ import {
     MatRadioModule,
     MatChipsModule,
     MatSlideToggleModule,
+    OverlayModule,
   ],
   declarations: [],
 })

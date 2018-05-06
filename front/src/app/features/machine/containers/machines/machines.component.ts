@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 import {Machine} from '../../models/machine.model';
 import {selectAllMachines} from '../../store/machine.selectors';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
-import {LoadAllMachines} from '../../store/machine.action';
 
 @Component({
   selector: 'pulpe-machines',
@@ -24,6 +23,6 @@ export class MachinesComponent implements OnInit {
     this.machines$ = this.store.select(selectAllMachines);
   }
 
-  onDelete(machine:Machine) : void {
+  onDelete(machine: Machine): void {
   }
 }

@@ -1,3 +1,4 @@
+///<reference path="../../../node_modules/@angular/cdk/overlay/typings/overlay-module.d.ts"/>
 import {LOCALE_ID, NgModule, Optional, SkipSelf} from '@angular/core';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserModule} from '@angular/platform-browser';
@@ -22,9 +23,11 @@ import {MatPaginatorIntl} from '@angular/material';
 import {CustomPaginator} from '../shared/provides/paginator.custom';
 import {AuthenticationProfile} from '../features/auth/models/authentication-profile.model';
 import {environment} from '../../environments/environment';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 @NgModule({
   imports: [
+    OverlayModule,
     StoreModule.forRoot(reducers, {metaReducers}),
     StoreRouterConnectingModule,
     EffectsModule.forRoot([RouterEffects]),
@@ -40,7 +43,8 @@ import {environment} from '../../environments/environment';
       config: {
         tokenGetter: getToken(),
         headerName: 'authorization',
-        whitelistedDomains: [`${environment.domain}:${environment.port}`]
+        whitelistedDomains: [`${environment.domain}:${environment.port}`],
+        blacklistedRoutes: [`${environment.domain}:${environment.port}/signin`],
       }
     }),
 

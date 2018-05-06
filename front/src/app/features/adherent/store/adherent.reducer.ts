@@ -28,7 +28,8 @@ export function adherentReducer(state: AdherentState = initialState,
     }
 
     case AdherentActionsTypes.LoadAllSuccess: {
-      return adapter.addMany(action.payload, {
+      const adherents = action.payload;
+      return adapter.addMany(adherents, {
         ...state,
         loaded: true,
         loading: false,

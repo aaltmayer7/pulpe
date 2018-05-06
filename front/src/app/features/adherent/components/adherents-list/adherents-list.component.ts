@@ -1,6 +1,8 @@
 import {Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, SimpleChanges, OnChanges, AfterViewInit} from '@angular/core';
 import {Adherent} from '../../models/adherent.model';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Objective} from '../../enums/objective.enum';
+import {Gender} from '../../enums/gender.enum';
 
 @Component({
   selector: 'pulpe-adherents-list',
@@ -14,8 +16,10 @@ export class AdherentsListComponent implements OnInit, OnChanges, AfterViewInit 
   @ViewChild(MatSort) sort: MatSort;
 
   dataSource: MatTableDataSource<Adherent>;
+  displayedColumns: string[] = ['gender', 'name', 'birthdate', 'email', 'objective', 'actions'];
 
-  displayedColumns: string[] = ['name', 'actions'];
+  objective = Objective;
+  gender = Gender;
 
   constructor() {
   }
@@ -42,7 +46,8 @@ export class AdherentsListComponent implements OnInit, OnChanges, AfterViewInit 
 
   private get filterPredicate(): ((data: Adherent, filter: string) => boolean) {
     return (adherent: Adherent, filter: string) => {
-      return adherent.firstName.toLowerCase().indexOf(filter.toLowerCase()) >= 0;
+      return adherent.firstName.toLowerCase().indexOf(filter.toLowerCase()) >= 0
+        || adherent.lastName.toLowerCase().indexOf(filter.toLowerCase()) >= 0;
     };
   }
 }

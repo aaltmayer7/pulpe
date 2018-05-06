@@ -1,8 +1,36 @@
 <div class="mat-elevation-z12">
   <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Sexe</strong></mat-header-cell>
+      <mat-cell *matCellDef="let adherent">
+        <ng-container [ngTemplateOutlet]="genderTmpl"
+                      [ngTemplateOutletContext]="{adherent : adherent}">
+        </ng-container>
+      </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Nom</strong></mat-header-cell>
-      <mat-cell *matCellDef="let machine">{{machine.name}}</mat-cell>
+      <mat-cell *matCellDef="let adherent">{{adherent.firstName}} {{adherent.lastName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="birthdate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Naissance</strong></mat-header-cell>
+      <mat-cell *matCellDef="let adherent">{{adherent.birthDate | date:'dd/MM/yyyy'}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Email</strong></mat-header-cell>
+      <mat-cell *matCellDef="let adherent">{{adherent.email}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="objective">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Objectif</strong></mat-header-cell>
+      <mat-cell *matCellDef="let adherent">
+        <ng-container [ngTemplateOutlet]="objectiveTmpl"
+                      [ngTemplateOutletContext]="{adherent : adherent}">
+        </ng-container>
+      </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="actions">
@@ -10,6 +38,8 @@
         <pulpe-mat-input-search [placeholder]="'Rechercher par nom...'"
                                 (filter)="onFilter($event)"></pulpe-mat-input-search>
       </mat-header-cell>
+      <mat-cell *matCellDef="let adherent" class="text-right">
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -19,3 +49,24 @@
                  [pageSizeOptions]="[10, 25, 50, 100]">
   </mat-paginator>
 </div>
+
+<ng-template #objectiveTmpl let-adherent="adherent">
+  <ng-container [ngSwitch]="adherent.objective">
+    <img *ngSwitchCase="objective.MassGainer" matTooltip="Prise de masse" [matTooltipPosition]="'above'"
+         src="../../../../../assets/img/exercise-types/strength-64.png"
+         class="objective-img" alt="Type">
+    <img *ngSwitchCase="objective.GeneralForm" matTooltip="Forme générale" [matTooltipPosition]="'above'"
+         src="../../../../../assets/img/exercise-types/stationary-bike-64.png"
+         class="objective-img" alt="Type">
+    <img *ngSwitchCase="objective.WeightLoss" matTooltip="Perte de poids" [matTooltipPosition]="'above'"
+         src="../../../../../assets/img/exercise-types/weight-64.png"
+         class="objective-img" alt="Type">
+  </ng-container>
+</ng-template>
+
+<ng-template #genderTmpl let-adherent="adherent">
+  <ng-container [ngSwitch]="adherent.gender">
+    <i *ngSwitchCase="gender.Male" class="fa fa-mars"></i>
+    <i *ngSwitchCase="gender.Female" class="fa fa-venus"></i>
+  </ng-container>
+</ng-template>
