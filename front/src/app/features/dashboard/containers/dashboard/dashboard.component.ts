@@ -1,10 +1,10 @@
 import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {UserSessionState} from '../../../home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 import {selectAuthProfile} from '../../../home/store/user-session.selectors';
-import {AuthenticationProfile} from '../../../home/models/authentication-profile.model';
+import {AuthenticationProfile} from '../../../auth/models/authentication-profile.model';
 
 @Component({
   selector: 'pulpe-dashboard',

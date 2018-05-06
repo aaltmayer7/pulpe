@@ -4,11 +4,10 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, switchMap} from 'rxjs/operators';
 
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {AuthService} from '../../../core/services/auth.service';
+import {Observable, of} from 'rxjs';
+import {AuthService} from '../../auth/services/auth.service';
 import {Logout, Signin, SigninError, SigninSuccess, Signup, SignupError, UserSessionActionTypes} from './user-session.action';
-import {AuthenticationProfile} from '../models/authentication-profile.model';
-import {of} from 'rxjs/observable/of';
+import {AuthenticationProfile} from '../../auth/models/authentication-profile.model';
 import {LocalStorageService} from 'angular-2-local-storage';
 import {ToastrService} from 'ngx-toastr';
 import {HttpErrorResponse} from '@angular/common/http';

@@ -1,8 +1,8 @@
 import {Component, OnInit, ChangeDetectionStrategy, Renderer2} from '@angular/core';
-import {UserSessionState} from '../../store/user-session.reducer';
+import {UserSessionState} from '../../../home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {AuthenticationProfile} from '../../models/authentication-profile.model';
-import {Signin} from '../../store/user-session.action';
+import {Signin} from '../../../home/store/user-session.action';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 
 @Component({

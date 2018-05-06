@@ -26,7 +26,7 @@
                 <form (submit)="onSignup()" [formGroup]="formGroup">
                   <div class="form-group">
                     <i class="col-md-1 offset-1 col-2 text-center fa fa-user prefix my-auto pr-0"></i>
-                    <mat-input-container class="col-7 col-md-8" ngxErrors="lastName">
+                    <mat-form-field class="col-7 col-md-8" ngxErrors="lastName">
                       <input id="inputLastname" matInput
                              type="text"
                              placeholder="Saisissez votre nom"
@@ -35,11 +35,11 @@
                       <mat-error ngxError="required" [when]="['dirty']">
                         Votre nom est obligatoire.
                       </mat-error>
-                    </mat-input-container>
+                    </mat-form-field>
                   </div>
 
                   <div class="form-group">
-                    <mat-input-container class="col-7 col-md-8 offset-md-2 offset-3"
+                    <mat-form-field class="col-7 col-md-8 offset-md-2 offset-3"
                                         ngxErrors="firstName">
                       <input id="inputFirstName" matInput
                              type="text"
@@ -49,12 +49,12 @@
                       <mat-error ngxError="required" [when]="['dirty']"
                                class="form-control-feedback">Votre prénom est obligatoire.
                       </mat-error>
-                    </mat-input-container>
+                    </mat-form-field>
                   </div>
 
                   <div class="form-group">
                     <i class="col-md-1 offset-1 col-2 text-center fa  fa-envelope prefix my-auto pr-0"></i>
-                    <mat-input-container class="col-7 col-md-8" ngxErrors="firstName">
+                    <mat-form-field class="col-7 col-md-8" ngxErrors="firstName">
                       <input id="inputEmail" matInput email
                              type="email"
                              placeholder="Saisissez votre email"
@@ -63,26 +63,26 @@
                       <mat-error ngxError="required" [when]="['dirty']"
                                class="form-control-feedback">Votre email est obligatoire.
                       </mat-error>
-                    </mat-input-container>
+                    </mat-form-field>
                   </div>
 
                   <div formGroupName="passwordForm">
                     <div class="form-group">
                       <i class="col-md-1 offset-1 col-2 text-center fa  fa-lock prefix my-auto pr-0"></i>
-                      <mat-input-container class="col-7 col-md-8">
+                      <mat-form-field class="col-7 col-md-8">
                         <input id="inputPassword" type="password" matInput
                                placeholder="Saisissez votre mot de passe"
                                formControlName="password"
                                required>
-                      </mat-input-container>
+                      </mat-form-field>
                     </div>
                     <div class="form-group">
                       <i class="col-md-1 offset-1 col-2 text-center fa  fa-lock prefix my-auto pr-0"></i>
-                      <mat-input-container class="col-7 col-md-8">
+                      <mat-form-field class="col-7 col-md-8">
                         <input id="inputConfirmPassword" type="password" matInput
                                placeholder="Veuillez confirmer votre mot de passe"
                                formControlName="confirmPassword" required>
-                      </mat-input-container>
+                      </mat-form-field>
                     </div>
                   </div>
                   <div class="form-group">

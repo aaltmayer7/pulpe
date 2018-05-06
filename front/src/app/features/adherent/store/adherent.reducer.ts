@@ -1,6 +1,6 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {AdherentAction, AdherentActionsTypes} from './adherent.action';
-import {Adherent} from '../models/Adherent.model';
+import {Adherent} from '../models/adherent.model';
 
 export interface AdherentState extends EntityState<Adherent> {
   loaded: boolean;

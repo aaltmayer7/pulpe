@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {CanActivate} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {MachineState} from '../store/machine.reducer';
 import {selectLoaded} from '../store/machine.selectors';

@@ -14,13 +14,13 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
 import {LocalStorageModule} from 'angular-2-local-storage';
 import {CustomSerializer} from './store/router.reducer';
-import {AuthService} from './services/auth.service';
+import {AuthService} from '../features/auth/services/auth.service';
 import {CoachGuard} from './guards/coach.guard';
-import {AuthenticateGuard} from './guards/authenticate.guard';
+import {AuthenticateGuard} from '../features/auth/guards/authenticate.guard';
 import {JwtModule} from '@auth0/angular-jwt';
 import {MatPaginatorIntl} from '@angular/material';
 import {CustomPaginator} from '../shared/provides/paginator.custom';
-import {AuthenticationProfile} from '../features/home/models/authentication-profile.model';
+import {AuthenticationProfile} from '../features/auth/models/authentication-profile.model';
 import {environment} from '../../environments/environment';
 
 @NgModule({
@@ -93,6 +93,8 @@ function getToken(): () => string {
     let token: string;
     try {
       authProfile = JSON.parse(localStorage.getItem('profile'));
+    } catch {
+      throw new Error('No profile found');
     } finally {
       token = authProfile.token;
     }

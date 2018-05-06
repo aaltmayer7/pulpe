@@ -1,8 +1,8 @@
 import {Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Renderer2, ViewChild} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 import {MediaMatcher} from '@angular/cdk/layout';
-import {Observable} from 'rxjs/Observable';
-import {AuthenticationProfile} from '../../models/authentication-profile.model';
+import {Observable} from 'rxjs';
+import {AuthenticationProfile} from '../../../auth/models/authentication-profile.model';
 import {UserSessionState} from '../../store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {selectAuthProfile} from '../../store/user-session.selectors';

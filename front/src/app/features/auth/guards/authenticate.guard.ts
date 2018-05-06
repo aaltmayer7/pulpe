@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {selectAuthenticated, selectAuthProfile} from '../../features/home/store/user-session.selectors';
-import {UserSessionState} from '../../features/home/store/user-session.reducer';
+import {Observable} from 'rxjs';
+import {selectAuthenticated, selectAuthProfile} from '../../home/store/user-session.selectors';
+import {UserSessionState} from '../../home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
 import {map, tap} from 'rxjs/operators';
 import {LocalStorageService} from 'angular-2-local-storage';
-import {AuthenticationProfile} from '../../features/home/models/authentication-profile.model';
-import {SigninSuccess} from '../../features/home/store/user-session.action';
+import {AuthenticationProfile} from '../models/authentication-profile.model';
+import {SigninSuccess} from '../../home/store/user-session.action';
 import {AuthService} from '../services/auth.service';
 
 @Injectable()

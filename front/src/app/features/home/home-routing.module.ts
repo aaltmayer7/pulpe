@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './containers/home/home.component';
-import {AuthenticateGuard} from '../../core/guards/authenticate.guard';
+import {AuthenticateGuard} from '../auth/guards/authenticate.guard';
 import {WelcomeComponent} from './containers/welcome/welcome.component';
-import {SigninComponent} from './containers/signin/signin.component';
-import {SignupComponent} from './containers/signup/signup.component';
+import {SigninComponent} from '../auth/containers/signin/signin.component';
+import {SignupComponent} from '../auth/containers/signup/signup.component';
 
 const routes: Routes = [
   {

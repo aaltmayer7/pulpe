@@ -1,5 +1,5 @@
 import {Component, OnInit, ChangeDetectionStrategy, Input} from '@angular/core';
-import {AuthenticationProfile} from '../../models/authentication-profile.model';
+import {AuthenticationProfile} from '../../../auth/models/authentication-profile.model';
 
 const IMG_DIR = '../../../../../assets';
 

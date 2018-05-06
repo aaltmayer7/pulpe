@@ -1,9 +1,9 @@
 import {Component, OnInit, ChangeDetectionStrategy, Renderer2} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
 import {AuthenticationProfile} from '../../models/authentication-profile.model';
-import {UserSessionState} from '../../store/user-session.reducer';
+import {UserSessionState} from '../../../home/store/user-session.reducer';
 import {Store} from '@ngrx/store';
-import {Signup} from '../../store/user-session.action';
+import {Signup} from '../../../home/store/user-session.action';
 
 @Component({
   selector: 'pulpe-signup',

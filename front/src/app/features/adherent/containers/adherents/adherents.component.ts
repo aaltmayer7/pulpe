@@ -1,6 +1,6 @@
 import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {Adherent} from '../../models/adherent.model';
 import {AdherentState} from '../../store/adherent.reducer';
 import {Store} from '@ngrx/store';

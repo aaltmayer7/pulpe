@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {CanActivate} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {filter, take, tap} from 'rxjs/operators';
 import {AdherentState} from '../store/adherent.reducer';
 import {Store} from '@ngrx/store';

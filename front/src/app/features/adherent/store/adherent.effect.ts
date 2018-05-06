@@ -4,8 +4,7 @@ import {Actions, Effect, ofType} from '@ngrx/effects';
 import {catchError, map, switchMap} from 'rxjs/operators';
 
 import {Action} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
-import {of} from 'rxjs/observable/of';
+import {Observable, of} from 'rxjs';
 import {ToastrService} from 'ngx-toastr';
 import {HttpErrorResponse} from '@angular/common/http';
 import {LoadAllAdherents, LoadAllAdherentsError, LoadAllAdherentsSuccess, AdherentActionsTypes} from './adherent.action';

@@ -1,6 +1,5 @@
 import {Component, OnInit, ChangeDetectionStrategy, Renderer2} from '@angular/core';
 import {fadeIn} from '../../../../shared/animations/fade-in.animation';
-import {Renderer3} from '@angular/core/src/render3/renderer';
 
 @Component({
   selector: 'pulpe-welcome',

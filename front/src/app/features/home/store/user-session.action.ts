@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {AuthenticationProfile} from '../models/authentication-profile.model';
+import {AuthenticationProfile} from '../../auth/models/authentication-profile.model';
 
 export enum UserSessionActionTypes {
   Signin = '[User Session] Signin',

@@ -1,6 +1,6 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity';
 import {UserSessionAction, UserSessionActionTypes} from './user-session.action';
-import {AuthenticationProfile} from '../models/authentication-profile.model';
+import {AuthenticationProfile} from '../../auth/models/authentication-profile.model';
 
 export interface UserSessionState extends EntityState<AuthenticationProfile> {
   authProfile: AuthenticationProfile;
